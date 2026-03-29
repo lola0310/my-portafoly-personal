@@ -1,0 +1,119 @@
+import { motion } from "motion/react";
+import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
+
+export function Hero() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-amber-500/20 rounded-full"
+            animate={{
+              y: [0, -1000],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+            }}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-5xl md:text-7xl font-bold text-stone-900 mb-4"
+          >
+            Desarrollador Full Stack
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-2xl md:text-3xl text-amber-700 mb-6"
+          >
+            Fidel Pérez Casado
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-lg text-stone-700 mb-12 max-w-2xl mx-auto"
+          >
+            Creando experiencias digitales excepcionales con código limpio y soluciones innovadoras
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="flex justify-center gap-4 mb-12"
+          >
+            <motion.a
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-stone-800/10 backdrop-blur-sm rounded-full hover:bg-stone-800/20 transition-colors"
+            >
+              <Github className="w-6 h-6 text-stone-900" />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1, rotate: -5 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-stone-800/10 backdrop-blur-sm rounded-full hover:bg-stone-800/20 transition-colors"
+            >
+              <Linkedin className="w-6 h-6 text-stone-900" />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              href="mailto:perezcasadofidel@gmail.com"
+              className="p-3 bg-stone-800/10 backdrop-blur-sm rounded-full hover:bg-stone-800/20 transition-colors"
+            >
+              <Mail className="w-6 h-6 text-stone-900" />
+            </motion.a>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom left-1/2 transform -translate-x-1/2 cursor-pointer"
+          onClick={() => scrollToSection("about")}
+        >
+          <ChevronDown className="w-8 h-8 text-amber-600" />
+        </motion.div>
+      </div>
+    </section>
+  );
+}
