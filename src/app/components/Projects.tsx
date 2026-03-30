@@ -14,7 +14,7 @@ export function Projects() {
       description: "Aplicación completa de juego de memoria. Ideal para el desarrollo cognitivo, el entretenimiento educativo o como herramienta de estimulación temprana.",
       tech: ["React", "TypeScript", "HTML", "Tailwind CSS"],
       image: memoryMatch,
-      github: "https://github.com/lola0310/memory-match",
+      github: "https://github.com/perezcasadofidel/memory-match",
       demo: "https://memory-match-fpc.vercel.app/",
     },
     {
