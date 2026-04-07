@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
+import { ChevronDown, Github, Linkedin, Mail,Download } from "lucide-react";
+import cvFileUrl from "@/public/Fidel_Pérez_Casado.pdf?url";
 
 export function Hero() {
   const scrollToSection = (id: string) => {
@@ -68,6 +69,36 @@ export function Hero() {
             Creando experiencias digitales excepcionales con código limpio y soluciones innovadoras
           </motion.p>
 
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 justify-center mb-12">
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="px-7 py-3 rounded-xl text-white transition-all duration-200 hover:opacity-90 hover:scale-105 cursor-pointer"
+              style={{
+                background: "linear-gradient(135deg, #FF6F00, #FFB300)",
+                fontSize: "0.95rem",
+              }}
+            >
+              Ver Proyectos
+            </button>
+            <a
+              href={cvFileUrl}
+              download="Fidel_Pérez_Casado.pdf"
+              className="px-7 py-3 rounded-xl transition-all duration-200 hover:scale-105 border"
+              style={{
+                color: "#FF6F00",
+                borderColor: "#FF6F00",
+                background: "#FFF8E1.",
+                fontSize: "0.95rem",
+              }}
+            >
+              <span className="flex items-center gap-2">
+                <Download size={16} />
+                Descargar CV
+              </span>
+            </a>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,7 +108,7 @@ export function Hero() {
             <motion.a
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
-              href="https://github.com"
+              href="https://github.com/perezcasadofidel"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-stone-800/10 backdrop-blur-sm rounded-full hover:bg-stone-800/20 transition-colors"
