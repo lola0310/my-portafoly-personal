@@ -3,8 +3,9 @@ import { useInView } from "./hooks/useInView";
 import { ExternalLink, Github } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-import memoryMatch from '../../images/memory-match.png';
-import musicPlayer from '../../images/music-player.png';
+import memoryMatch from "../../images/memory-match.png";
+import musicPlayer from "../../images/music-player.png";
+import dahuPage from "../../images/dahu-page.png";
 
 export function Projects() {
   const [ref, isInView] = useInView({ threshold: 0.1 });
@@ -12,7 +13,8 @@ export function Projects() {
   const projects = [
     {
       title: "Digital Memory Card Game",
-      description: "Aplicación completa de juego de memoria. Ideal para el desarrollo cognitivo, el entretenimiento educativo o como herramienta de estimulación temprana.",
+      description:
+        "Aplicación completa de juego de memoria. Ideal para el desarrollo cognitivo, el entretenimiento educativo o como herramienta de estimulación temprana.",
       tech: ["React", "TypeScript", "HTML", "Tailwind CSS"],
       image: memoryMatch,
       github: "https://github.com/perezcasadofidel/memory-match",
@@ -20,23 +22,26 @@ export function Projects() {
     },
     {
       title: "Interactive Music Player",
-      description: "Aplicación de reproductor de música interactivo con funcionalidades de playlist, búsqueda y sincronización en la nube.",
+      description:
+        "Aplicación de reproductor de música interactivo con funcionalidades de playlist, búsqueda y sincronización en la nube.",
       tech: ["React", "TypeScript", "Tailwind CSS", "Web Audio API"],
       image: musicPlayer,
       github: "https://github.com/perezcasadofidel/music-player",
       demo: "https://music-player-fpc.vercel.app/",
     },
     {
-      title: "Social Media Dashboard",
-      description: "Panel analítico para redes sociales con visualización de datos, reportes automáticos y predicciones con IA.",
-      tech: ["React", "Python", "FastAPI", "TensorFlow"],
-      image: "analytics dashboard",
+      title: "Dahu Page",
+      description:
+        "Panel analítico para redes sociales con visualización de datos, reportes automáticos y predicciones con IA.",
+      tech: ["React", "TypeScript", "Tailwind CSS", "EmailJS"],
+      image: dahuPage,
       github: "https://github.com",
-      demo: "https://example.com",
+      demo: "https://dahu-page.vercel.app/",
     },
     {
       title: "Portfolio Generator",
-      description: "Herramienta para crear portafolios personalizados con plantillas dinámicas y exportación a múltiples formatos.",
+      description:
+        "Herramienta para crear portafolios personalizados con plantillas dinámicas y exportación a múltiples formatos.",
       tech: ["Vue.js", "Express", "MySQL", "AWS S3"],
       image: "portfolio builder",
       github: "https://github.com",
@@ -44,7 +49,8 @@ export function Projects() {
     },
     {
       title: "Fitness Tracker",
-      description: "Aplicación móvil y web para seguimiento de ejercicios, nutrición y objetivos de salud con gráficos interactivos.",
+      description:
+        "Aplicación móvil y web para seguimiento de ejercicios, nutrición y objetivos de salud con gráficos interactivos.",
       tech: ["React Native", "Firebase", "Chart.js"],
       image: "fitness tracking app",
       github: "https://github.com",
@@ -52,7 +58,8 @@ export function Projects() {
     },
     {
       title: "Real Estate Platform",
-      description: "Plataforma inmobiliaria con búsqueda avanzada, tours virtuales 360° y sistema de mensajería integrado.",
+      description:
+        "Plataforma inmobiliaria con búsqueda avanzada, tours virtuales 360° y sistema de mensajería integrado.",
       tech: ["Angular", "Spring Boot", "PostgreSQL"],
       image: "real estate website",
       github: "https://github.com",
@@ -95,8 +102,12 @@ export function Projects() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-stone-900 mb-2">{project.title}</h3>
-                <p className="text-stone-600 mb-4 text-sm">{project.description}</p>
+                <h3 className="text-xl font-bold text-stone-900 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-stone-600 mb-4 text-sm">
+                  {project.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
@@ -110,17 +121,26 @@ export function Projects() {
                 </div>
 
                 <div className="flex gap-4">
-                  <motion.a
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-stone-700 hover:text-amber-600 transition-colors"
-                  >
-                    <Github className="w-5 h-5" />
-                    <span className="text-sm">Código</span>
-                  </motion.a>
+                  {project.github === "https://github.com" ? (
+                    <p
+                      className={`flex items-center gap-2 text-stone-400 cursor-auto`}
+                    >
+                      <Github className="w-5 h-5" />
+                      <span className="text-sm">Código</span>
+                    </p>
+                  ) : (
+                    <motion.a
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center gap-2 text-stone-700 hover:text-amber-600 transition-colors`}
+                    >
+                      <Github className="w-5 h-5" />
+                      <span className="text-sm">Código</span>
+                    </motion.a>
+                  )}
                   <motion.a
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
