@@ -6,6 +6,7 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import memoryMatch from "../../images/memory-match.png";
 import musicPlayer from "../../images/music-player.png";
 import dahuPage from "../../images/dahu-page.png";
+import fitnessTracker from "../../images/fitness-tracker.png";
 
 export function Projects() {
   const [ref, isInView] = useInView({ threshold: 0.1 });
@@ -51,10 +52,10 @@ export function Projects() {
       title: "Fitness Tracker",
       description:
         "Aplicación móvil y web para seguimiento de ejercicios, nutrición y objetivos de salud con gráficos interactivos.",
-      tech: ["React Native", "Firebase", "Chart.js"],
-      image: "fitness tracking app",
-      github: "https://github.com",
-      demo: "https://example.com",
+      tech: ["React", "TypeScript", "Tailwind CSS"],
+      image: fitnessTracker,
+      github: "https://github.com/perezcasadofidel/Fitness-Tracker-App",
+      demo: "https://fitness-tracker-app-fpc.vercel.app/",
     },
     {
       title: "Real Estate Platform",
