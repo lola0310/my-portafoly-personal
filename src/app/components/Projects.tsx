@@ -13,13 +13,13 @@ export function Projects() {
 
   const projects = [
     {
-      title: "Digital Memory Card Game",
+      title: "Dahu Page",
       description:
-        "Aplicación completa de juego de memoria. Ideal para el desarrollo cognitivo, el entretenimiento educativo o como herramienta de estimulación temprana.",
-      tech: ["React", "TypeScript", "HTML", "Tailwind CSS"],
-      image: memoryMatch,
-      github: "https://github.com/perezcasadofidel/memory-match",
-      demo: "https://memory-match-fpc.vercel.app/",
+        "Página web corporativa interactiva para la promoción de un negocio, con galería de proyectos y formulario de contacto optimizado.",
+      tech: ["React", "TypeScript", "Tailwind CSS", "EmailJS"],
+      image: dahuPage,
+      github: "https://github.com",
+      demo: "https://dahu-page.vercel.app/",
     },
     {
       title: "Interactive Music Player",
@@ -31,14 +31,24 @@ export function Projects() {
       demo: "https://music-player-fpc.vercel.app/",
     },
     {
-      title: "Dahu Page",
+      title: "Fitness Tracker",
       description:
-        "Página web corporativa interactiva para la promoción de un negocio, con galería de proyectos y formulario de contacto optimizado.",
-      tech: ["React", "TypeScript", "Tailwind CSS", "EmailJS"],
-      image: dahuPage,
-      github: "https://github.com",
-      demo: "https://dahu-page.vercel.app/",
+        "Aplicación móvil y web para seguimiento de ejercicios, nutrición y objetivos de salud con gráficos interactivos.",
+      tech: ["React", "TypeScript", "Tailwind CSS"],
+      image: fitnessTracker,
+      github: "https://github.com/perezcasadofidel/Fitness-Tracker-App",
+      demo: "https://fitness-tracker-app-fpc.vercel.app/",
     },
+    {
+      title: "Digital Memory Card Game",
+      description:
+        "Aplicación completa de juego de memoria. Ideal para el desarrollo cognitivo, el entretenimiento educativo o como herramienta de estimulación temprana.",
+      tech: ["React", "TypeScript", "HTML", "Tailwind CSS"],
+      image: memoryMatch,
+      github: "https://github.com/perezcasadofidel/memory-match",
+      demo: "https://memory-match-fpc.vercel.app/",
+    },
+    
     {
       title: "Portfolio Generator",
       description:
@@ -48,15 +58,7 @@ export function Projects() {
       github: "https://github.com",
       demo: "https://example.com",
     },
-    {
-      title: "Fitness Tracker",
-      description:
-        "Aplicación móvil y web para seguimiento de ejercicios, nutrición y objetivos de salud con gráficos interactivos.",
-      tech: ["React", "TypeScript", "Tailwind CSS"],
-      image: fitnessTracker,
-      github: "https://github.com/perezcasadofidel/Fitness-Tracker-App",
-      demo: "https://fitness-tracker-app-fpc.vercel.app/",
-    },
+    
     {
       title: "Real Estate Platform",
       description:
